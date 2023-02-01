@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index/style.css') }}">
+    <script src="https://kit.fontawesome.com/5697e48cf8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    {% if user != None %}
+        <div class="user_login" onclick="location.href = '/clientarea/selectLicense';"><i class="fa-solid fa-user"></i> {{user}}</div>
+    {% else %}
+        <div class="user_login" onclick="location.href = '/login';"><i class="fa-solid fa-user"></i> Area do cliente</div>
+    {% endif %}
+    <div class="navigation">
+        <div class="nav-title">Web Admin</div>
+        <div class="nav-text">Nosso principal objetivo é facilitar as tarefas da administração de servidores, independentemente da plataforma na qual o servidor está hospedada. O Web Admin oferece inumeras ferramentas para a administração de seu servidor remotamente.
+        </div>
+        <div class="nav-buttongrid">
+            <button onclick="location.href = '/shop';" class="buttons" role="button"><span class="text">Veja nossos planos</span></button>
+        </div>
+        <div class="nav-footer">
+            <div class="footer-infos">
+                <div class="footer-about">Sobre Nos
+                    <div class="footer-abouttext">Nosso projeto tem como objetivo facilitar a administração de
+                        servidores, possibilitando os donos de servidores a realizar ações sem precisarem estar
+                        conectados em seu servidor.</div>
+                </div>
+                <div class="footer-developer">Projeto desenvolvido por Gabriel.</div>
+                <div class="footer-contacts">
+                    <div class="footer-about">Social Media
+                        <div class="organize">
+                            <i class="fa-brands fa-github"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-discord"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

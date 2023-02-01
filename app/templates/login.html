@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Admin - conectar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login/style.css') }}">
+    <script src="https://kit.fontawesome.com/5697e48cf8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action = "generateUser" method = "post" id = "form1">
+			<h1>Crie sua conta</h1>
+			<input type="text" name="text" placeholder="Login" />
+			<input type="email" name="email" placeholder="Email" />
+			<input type="password" name="password" placeholder="Password" />
+			<input type="ip" name="ip" placeholder="IP do Servidor: localhost:30120" />
+			<button type="submit" form="form1" value="Submit" >Criar</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action = "/loginUser" method = "post" id = "form2">
+			<h1>Entrar</h1>
+			<input type="login" name="text" placeholder="Login" />
+			<input type="password" name = "password" placeholder="Password" />
+			<!--<a href="#">Esqueceu sua senha?</a>-->
+			<button type="submit" form="form2" value="Submit">Entrar</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Bem-vindo de volta!</h1>
+				<p>Para se manter conectado conosco, faça o login com suas informações pessoais</p>
+				<button class="ghost" id="signIn">Entrar</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Olá, amigo!</h1>
+				<p>É novo por aqui? Que tal se juntar a nossa família?</p>
+				<button class="ghost" id="signUp">Criar</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+    signUpButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+    });
+
+    signInButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+    });
+</script>
+</body>
+</html>

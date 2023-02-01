@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='shop/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index/style.css') }}">
+    <title>Web Admin - Loja</title>
+    <script src="https://kit.fontawesome.com/5697e48cf8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    {% if user != None %}
+        <div class="user_login" onclick="location.href = '/clientarea/selectLicense';"><i class="fa-solid fa-user"></i> {{user}}</div>
+    {% else %}
+        <div class="user_login" onclick="location.href = '/login';"><i class="fa-solid fa-user"></i> Area do cliente</div>
+    {% endif %}
+    <div class="plans">
+        <div class="card fivem">
+            <h1>FiveM</h1>
+            <h2>R$ 35/MÊS</h2>
+            <div class="nav-buttongrid">
+                <button onclick="location.href = '/payment/FiveM';" class="buttons" role="button"><span class="text">COMPRAR</span></button>
+            </div>
+        </div>
+        <!--<div class="card MTA">
+            <h1>MTA</h1>
+            <h6>Acesso as funções:
+                <br> Ban
+                <br> Kick
+                <br> GiveMoney
+                <br> Entre outras
+            </h6>
+            <h2>R$ 35/MÊS</h2>
+            <div class="nav-buttongrid">
+                <button onclick="location.href = '/payment/MTA';" class="buttons" role="button"><span class="text">COMPRAR</span></button>
+            </div>
+        </div>-->
+    </div>
+</body>
+</html>

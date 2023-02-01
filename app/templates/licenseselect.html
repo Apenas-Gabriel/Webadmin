@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='clientarea/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index/style.css') }}">
+    <title>Web Admin - Loja</title>
+    <script src="https://kit.fontawesome.com/5697e48cf8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div style="margin-top: 100px;" class="nav-title">Suas Licenças</div>
+    <a class="nav-title" src="" href="https://cdn.discordapp.com/attachments/1060333675063025824/1060371990533373972/web_admin.rar">BAIXE AQUI A API</a>
+    <div class="plans">
+        {% if fivem %}
+            <div onclick="location.href = '/clientarea/FiveM';" class="card fivem">
+                <h1>FiveM</h1>
+                <div class="details">
+                    <h3>Seu token: {{fivemtoken}}</h3>
+                    <h3>Data da compra: {{fivemdate}}</h3>
+                    <h3>Expirá em: {{fivemendtime}}</h3>
+                    <h3>IP cadastrado: {{fivemIP}}</h3>
+                </div>
+            </div>
+        {% endif %}
+        {% if mta %}
+            <div class="card MTA">
+                <h1>MTA</h1>
+                <div class="details">
+                    <h3>Seu token: {{mtatoken}}</h3>
+                    <h3>Data da compra: {{mtadate}}</h3>
+                    <h3>Expirá em: {{mtaendtime}}</h3>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
